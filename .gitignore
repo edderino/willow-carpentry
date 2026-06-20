@@ -1,0 +1,7 @@
+# Leftover Wix export / stray duplicate assets (real images live in images/)
+/*.png
+/*.jpg
+/*.jpeg
+/project-1-before-frame.html
+/project-1-before-frame_files/
+.DS_Store
