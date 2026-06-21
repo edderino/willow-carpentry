@@ -24,9 +24,7 @@ export const IMAGES = {
 // craft-card images so the gallery doesn't obviously repeat them. frontStep
 // (detail-front-step.png) is omitted entirely — it is byte-identical to
 // project-2-after-finished.png, so showing it would duplicate the staircase.
-export const GALLERY = [
-  "poolDeck", "p1After", "courtyard", "p2After", "raisedDeck", "p1Before", "p2Before",
-];
+export const GALLERY = ["poolDeck", "p1After", "courtyard", "raisedDeck"];
 
 // Reference map of where each image is featured (single source for placement).
 export const SECTIONS = {
@@ -35,8 +33,8 @@ export const SECTIONS = {
     { before: "p1Before", after: "p1After" },             // before/after pair
     { before: "p2Before", after: "p2After" },             // before/after pair
   ],
-  gallery: ["poolDeck", "p1After", "courtyard", "p2After", "raisedDeck", "p1Before", "p2Before"],
+  gallery: ["poolDeck", "p1After", "courtyard", "raisedDeck"],
   craft: ["heroDeck", "cladDeck", "planter"],             // detail cards (not in gallery)
   final: "raisedDeck",
-  // frontStep is intentionally unused (byte-dup of p2After)
+  // frontStep, p2After, p2Before, p1Before are intentionally not shown in the gallery
 };
