@@ -20,21 +20,23 @@ export const IMAGES = {
   raisedDeck: { src: "images/willow/IMG_0203.JPG",          alt: "Raised timber deck and steps beside a two-storey home",         cap: "Raised deck & steps" },
 };
 
-// Gallery = the full collection, each image exactly once (data-driven order).
+// Gallery = curated project showcase (data-driven order). Excludes the hero and
+// craft-card images so the gallery doesn't obviously repeat them. frontStep
+// (detail-front-step.png) is omitted entirely — it is byte-identical to
+// project-2-after-finished.png, so showing it would duplicate the staircase.
 export const GALLERY = [
-  "poolDeck", "p1After", "raisedDeck", "p2After", "cladDeck", "courtyard",
-  "heroDeck", "p1Before", "frontStep", "p2Before", "planter",
+  "poolDeck", "p1After", "courtyard", "p2After", "raisedDeck", "p1Before", "p2Before",
 ];
 
 // Reference map of where each image is featured (single source for placement).
 export const SECTIONS = {
   hero: "heroDeck",
-  moodband: "poolDeck",                                   // never the hero image
   transformation: [
-    { before: "p1Before", after: "p1After" },             // before/after pair only
-    { before: "p2Before", after: "p2After" },             // before/after pair only
+    { before: "p1Before", after: "p1After" },             // before/after pair
+    { before: "p2Before", after: "p2After" },             // before/after pair
   ],
-  // services tiles are typographic cards (no project photos)
-  craft: ["frontStep", "cladDeck", "planter"],            // unique detail cards
+  gallery: ["poolDeck", "p1After", "courtyard", "p2After", "raisedDeck", "p1Before", "p2Before"],
+  craft: ["heroDeck", "cladDeck", "planter"],             // detail cards (not in gallery)
   final: "raisedDeck",
+  // frontStep is intentionally unused (byte-dup of p2After)
 };
