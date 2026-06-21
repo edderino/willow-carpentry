@@ -152,6 +152,9 @@ section { position: relative; }
 .gallery .g-item:hover img { transform: scale(1.04); filter: brightness(1.05); }
 .gallery .g-cap { position: absolute; z-index: 2; left: 14px; bottom: 12px; font-family: var(--ff-display); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--offwhite); background: rgba(18,14,12,.6); backdrop-filter: blur(4px); padding: 5px 10px; border-radius: 3px; opacity: 0; transition: opacity .3s; }
 .gallery .g-item:hover .g-cap { opacity: 1; }
+.gallery .g-item.g-ph { display: flex; align-items: center; justify-content: center; text-align: center; cursor: default;
+  aspect-ratio: 4 / 5; background: linear-gradient(155deg, var(--charcoal-3), var(--charcoal-2)); border: 1px dashed var(--line); }
+.gallery .g-item.g-ph span { font-family: var(--ff-display); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--stone-dim); line-height: 1.7; }
 
 /* lightbox */
 .lightbox { position: fixed; inset: 0; z-index: 120; display: none; align-items: center; justify-content: center; background: rgba(14,11,9,.93); backdrop-filter: blur(10px); padding: 4vh 4vw; }

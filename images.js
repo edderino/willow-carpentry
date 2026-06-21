@@ -24,7 +24,10 @@ export const IMAGES = {
 // craft-card images so the gallery doesn't obviously repeat them. frontStep
 // (detail-front-step.png) is omitted entirely — it is byte-identical to
 // project-2-after-finished.png, so showing it would duplicate the staircase.
-export const GALLERY = ["poolDeck", "p1After", "raisedDeck", "courtyard", "cladDeck", "heroDeck", "frontStep", "planter"];
+// Recent Work shows only images NOT used anywhere else on the site. There are
+// exactly 3 of those (poolDeck, courtyard, frontStep); the remaining 3 tiles are
+// placeholders for further work, for a total of 6 (clean 3x2 grid).
+export const GALLERY = ["poolDeck", "courtyard", "frontStep", "placeholder", "placeholder", "placeholder"];
 
 // Reference map of where each image is featured (single source for placement).
 export const SECTIONS = {
@@ -33,8 +36,8 @@ export const SECTIONS = {
     { before: "p1Before", after: "p1After" },             // before/after pair
     { before: "p2Before", after: "p2After" },             // before/after pair
   ],
-  gallery: ["poolDeck", "p1After", "raisedDeck", "courtyard", "cladDeck", "heroDeck", "frontStep", "planter"],
-  craft: ["heroDeck", "cladDeck", "planter"],             // detail cards (also shown in gallery)
+  gallery: ["poolDeck", "courtyard", "frontStep"],        // only images not shown elsewhere (+3 placeholders)
+  craft: ["heroDeck", "cladDeck", "planter"],             // detail cards
   final: "raisedDeck",
   // p1Before, p2Before, p2After (framing / raised-entertainer) removed from the site per request
 };

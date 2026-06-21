@@ -12,6 +12,10 @@ const galleryEl = document.querySelector(".gallery");
 if (galleryEl) {
   galleryEl.innerHTML = GALLERY.map((key) => {
     const im = IMAGES[key];
+    if (!im) {
+      // placeholder tile for further work not yet photographed
+      return `<div class="g-item g-ph" aria-hidden="true"><span>More work<br>coming soon</span></div>`;
+    }
     return (
       `<button class="g-item" type="button" aria-label="View larger: ${im.alt}">` +
       `<img src="${im.src}" alt="${im.alt}" loading="lazy" />` +
@@ -116,6 +120,7 @@ const closeLb = () => {
 
 document.querySelectorAll(".gallery .g-item").forEach((btn) => {
   const img = btn.querySelector("img");
+  if (!img) return; // placeholder tile — no lightbox
   btn.addEventListener("click", () => openLb(img));
 });
 if (lightbox) {
