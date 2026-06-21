@@ -14,27 +14,26 @@ export const IMAGES = {
   p2Before:   { src: "images/project-2-before-frame.png",   alt: "Raised deck framing and stair stringers under construction",    cap: "Raised deck · Framing" },
   p2After:    { src: "images/project-2-after-finished.png", alt: "Finished raised deck with wide cascading steps",                cap: "Raised entertainer · Steps" },
   planter:    { src: "images/detail-planter-box.png",       alt: "Custom timber planter box with clean, even boards",             cap: "Custom planter box" },
-  poolDeck:   { src: "images/willow/IMG_0205.JPG",          alt: "Glossy timber deck wrapping a backyard pool",                   cap: "Poolside deck" },
-  courtyard:  { src: "images/willow/IMG_0206.JPG",          alt: "Compact courtyard deck with lounge chairs",                     cap: "Courtyard deck" },
-  cladDeck:   { src: "images/willow/IMG_0204.JPG",          alt: "Glossy timber deck against matching timber cladding",           cap: "Deck & cladding" },
+  poolDeck:   { src: "images/willow/IMG_0205.JPG",          alt: "Glossy jarrah deck wrapping a backyard pool",                   cap: "Pool surround · Jarrah" },
+  courtyard:  { src: "images/willow/IMG_0206.JPG",          alt: "Compact courtyard entertaining deck",                           cap: "Courtyard deck" },
+  cladDeck:   { src: "images/willow/IMG_0204.JPG",          alt: "Glossy timber deck under a pergola against matching cladding",  cap: "Deck & pergola" },
   raisedDeck: { src: "images/willow/IMG_0203.JPG",          alt: "Raised timber deck and steps beside a two-storey home",         cap: "Raised deck & steps" },
 };
 
-// Gallery = the full collection, each image exactly once (data-driven order).
-export const GALLERY = [
-  "poolDeck", "p1After", "raisedDeck", "p2After", "cladDeck", "courtyard",
-  "heroDeck", "p1Before", "frontStep", "p2Before", "planter",
-];
+// Gallery = curated finished-deck showcase. Each image appears ONCE on the whole
+// site (no cross-section repeats), so the gallery only holds the finished decks
+// not featured elsewhere.
+export const GALLERY = ["poolDeck", "courtyard", "cladDeck"];
 
-// Reference map of where each image is featured (single source for placement).
+// Where each image is featured. Every image is used exactly once across the site.
 export const SECTIONS = {
-  hero: "heroDeck",
-  moodband: "poolDeck",                                   // never the hero image
+  hero: "heroDeck",                                       // golden-hour deck — opens the site
   transformation: [
-    { before: "p1Before", after: "p1After" },             // before/after pair only
-    { before: "p2Before", after: "p2After" },             // before/after pair only
+    { before: "p1Before", after: "p1After" },             // wraparound — before/after pair
+    { before: "p2Before", after: "p2After" },             // raised entertainer — before/after pair
   ],
+  gallery: ["poolDeck", "courtyard", "cladDeck"],         // pool, courtyard, pergola/deck
   // services tiles are typographic cards (no project photos)
-  craft: ["frontStep", "cladDeck", "planter"],            // unique detail cards
-  final: "raisedDeck",
+  craft: ["frontStep", "planter"],                        // detail / joinery close-ups
+  final: "raisedDeck",                                    // raised deck — closes the site
 };
