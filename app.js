@@ -1,9 +1,24 @@
 // Willow Carpentry — interactions. Dependency-free (no CDN), so the page can
 // never be left blank by a failed import. Reveals use IntersectionObserver with
 // a hard fail-safe; everything degrades to fully-visible.
+import { IMAGES, GALLERY } from "./images.js";
 
 window.__willowRevealed = true;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ---------- Gallery: rendered from the single source of truth (images.js) ----------
+   Each image appears once; add/remove gallery images by editing GALLERY there. */
+const galleryEl = document.querySelector(".gallery");
+if (galleryEl) {
+  galleryEl.innerHTML = GALLERY.map((key) => {
+    const im = IMAGES[key];
+    return (
+      `<button class="g-item" type="button" aria-label="View larger: ${im.alt}">` +
+      `<img src="${im.src}" alt="${im.alt}" loading="lazy" />` +
+      `<span class="g-cap">${im.cap}</span></button>`
+    );
+  }).join("");
+}
 
 /* ---------- Nav background on scroll ---------- */
 const nav = document.getElementById("nav");
