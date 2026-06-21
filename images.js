@@ -18,9 +18,9 @@ export const IMAGES = {
   courtyard:  { src: "images/willow/IMG_0206.JPG",          alt: "Compact courtyard deck with lounge chairs",                     cap: "Courtyard deck" },
   cladDeck:   { src: "images/willow/IMG_0204.JPG",          alt: "Glossy timber deck against matching timber cladding",           cap: "Deck & cladding" },
   raisedDeck: { src: "images/willow/IMG_0203.JPG",          alt: "Raised timber deck and steps beside a two-storey home",         cap: "Raised deck & steps" },
-  deck20:     { src: "images/willow/deck%2020.jpg",         alt: "Compact timber deck off a townhouse sliding door",              cap: "Townhouse deck" },
-  deck21:     { src: "images/willow/deck%2021.jpg",         alt: "Timber balcony deck overlooking the street",                    cap: "Balcony deck" },
-  deck22:     { src: "images/willow/deck%2022.jpg",         alt: "Freshly oiled timber deck overlooking the backyard",            cap: "Elevated deck" },
+  deck20:     { src: "images/willow/deck-20.jpg",           alt: "Compact timber deck off a townhouse sliding door",              cap: "Townhouse deck" },
+  deck21:     { src: "images/willow/deck-21.jpg",           alt: "Timber balcony deck overlooking the street",                    cap: "Balcony deck" },
+  deck22:     { src: "images/willow/deck-22.jpg",           alt: "Freshly oiled timber deck overlooking the backyard",            cap: "Elevated deck" },
 };
 
 // Gallery = curated project showcase (data-driven order). Excludes the hero and
