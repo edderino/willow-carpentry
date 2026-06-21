@@ -18,16 +18,18 @@ export const IMAGES = {
   courtyard:  { src: "images/willow/IMG_0206.JPG",          alt: "Compact courtyard deck with lounge chairs",                     cap: "Courtyard deck" },
   cladDeck:   { src: "images/willow/IMG_0204.JPG",          alt: "Glossy timber deck against matching timber cladding",           cap: "Deck & cladding" },
   raisedDeck: { src: "images/willow/IMG_0203.JPG",          alt: "Raised timber deck and steps beside a two-storey home",         cap: "Raised deck & steps" },
+  deck20:     { src: "images/willow/deck%2020.jpg",         alt: "Compact timber deck off a townhouse sliding door",              cap: "Townhouse deck" },
+  deck21:     { src: "images/willow/deck%2021.jpg",         alt: "Timber balcony deck overlooking the street",                    cap: "Balcony deck" },
+  deck22:     { src: "images/willow/deck%2022.jpg",         alt: "Freshly oiled timber deck overlooking the backyard",            cap: "Elevated deck" },
 };
 
 // Gallery = curated project showcase (data-driven order). Excludes the hero and
 // craft-card images so the gallery doesn't obviously repeat them. frontStep
 // (detail-front-step.png) is omitted entirely — it is byte-identical to
 // project-2-after-finished.png, so showing it would duplicate the staircase.
-// Recent Work shows only images NOT used anywhere else on the site. There are
-// exactly 3 of those (poolDeck, courtyard, frontStep); the remaining 3 tiles are
-// placeholders for further work, for a total of 6 (clean 3x2 grid).
-export const GALLERY = ["poolDeck", "courtyard", "frontStep", "placeholder", "placeholder", "placeholder"];
+// Recent Work shows images not used elsewhere on the site: the three originals
+// (poolDeck, courtyard, frontStep) plus three new deck photos — 6 total (3x2 grid).
+export const GALLERY = ["poolDeck", "courtyard", "frontStep", "deck20", "deck21", "deck22"];
 
 // Reference map of where each image is featured (single source for placement).
 export const SECTIONS = {
@@ -36,7 +38,7 @@ export const SECTIONS = {
     { before: "p1Before", after: "p1After" },             // before/after pair
     { before: "p2Before", after: "p2After" },             // before/after pair
   ],
-  gallery: ["poolDeck", "courtyard", "frontStep"],        // only images not shown elsewhere (+3 placeholders)
+  gallery: ["poolDeck", "courtyard", "frontStep", "deck20", "deck21", "deck22"], // images not shown elsewhere
   craft: ["heroDeck", "cladDeck", "planter"],             // detail cards
   final: "raisedDeck",
   // p1Before, p2Before, p2After (framing / raised-entertainer) removed from the site per request
