@@ -34,7 +34,7 @@ export const SECTIONS = {
     { before: "p1Before", after: "p1After" },             // before/after pair only
     { before: "p2Before", after: "p2After" },             // before/after pair only
   ],
-  services: ["p1After", "p2After", "courtyard", "p1Before", "p2Before", "planter"],
+  // services tiles are typographic cards (no project photos)
   craft: ["frontStep", "cladDeck", "planter"],            // unique detail cards
   final: "raisedDeck",
 };
