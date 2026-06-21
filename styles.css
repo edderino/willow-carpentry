@@ -184,13 +184,6 @@ section { position: relative; }
 .why-item h3 { font-size: 1.2rem; margin-bottom: 5px; }
 .why-item p { color: var(--text-mute); font-size: 0.96rem; max-width: 44ch; }
 
-/* ---------- Reviews ---------- */
-.reviews { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(28px, 4vw, 64px); }
-.review-q .stars { color: var(--ember); letter-spacing: 3px; margin-bottom: 18px; }
-.review-q blockquote { font-family: var(--ff-display); font-weight: 500; font-size: clamp(1.25rem, 1.9vw, 1.65rem); line-height: 1.32; letter-spacing: -0.01em; text-wrap: balance; }
-.review-q .who { margin-top: 20px; font-weight: 600; }
-.review-q .who span { color: var(--stone-dim); font-weight: 400; }
-.review-note { margin-top: 40px; font-size: 0.82rem; color: var(--stone-dim); }
 
 /* ---------- Final CTA ---------- */
 .final { position: relative; min-height: 74svh; display: flex; align-items: center; overflow: hidden; }
@@ -260,7 +253,7 @@ section { position: relative; }
 @media (max-width: 1000px) {
   .nav-links, .nav .nav-cta { display: none; }
   .nav-burger { display: flex; }
-  .why-grid, .reviews { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
   .craft-grid { grid-template-columns: 1fr; }
   .gallery { columns: 2; }
   .reels { grid-template-columns: 1fr 1fr; }
