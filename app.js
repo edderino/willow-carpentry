@@ -76,25 +76,6 @@ if (reduceMotion || !("IntersectionObserver" in window)) {
   setTimeout(revealAll, 1600);
 }
 
-/* ---------- Hero background parallax (transform-only) ---------- */
-if (!reduceMotion) {
-  const heroBg = document.querySelector(".hero-bg img");
-  if (heroBg) {
-    let ticking = false;
-    const parallax = () => {
-      const y = Math.min(window.scrollY, window.innerHeight) * 0.16;
-      heroBg.style.transform = `scale(1.06) translate3d(0, ${y}px, 0)`;
-      ticking = false;
-    };
-    window.addEventListener(
-      "scroll",
-      () => { if (!ticking) { requestAnimationFrame(parallax); ticking = true; } },
-      { passive: true }
-    );
-    parallax();
-  }
-}
-
 /* ---------- Gallery lightbox (click + keyboard) ---------- */
 const lightbox = document.getElementById("lightbox");
 const lbImg = document.getElementById("lbImg");
