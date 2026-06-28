@@ -120,7 +120,7 @@ section { position: relative; }
 /* three full-bleed panels with interlocking ~8deg diagonal cuts (clip-path),
    separated by a dark angled gutter that follows the same angle. The gutter is
    the section background showing through where adjacent panels are clipped. */
-.svc-panels { --cut: 90px; --gutter: 16px; display: flex; margin-top: clamp(40px, 5vw, 64px); background: var(--charcoal); }
+.svc-panels { --cut: clamp(54px, 6vw, 90px); --gutter: 16px; display: flex; margin-top: clamp(40px, 5vw, 64px); background: var(--charcoal); }
 .svc-panel { position: relative; display: block; flex: 0 0 calc((100% + 2 * var(--cut)) / 3); height: clamp(460px, 80vh, 780px); overflow: hidden; background: var(--charcoal-2); box-shadow: inset 0 0 52px rgba(0, 0, 0, 0.42); }
 .svc-panel:nth-child(2), .svc-panel:nth-child(3) { margin-left: calc(-1 * var(--cut)); }
 .svc-panel:nth-child(1) { clip-path: polygon(0 0, calc(100% - var(--gutter)) 0, calc(100% - var(--cut) - var(--gutter)) 100%, 0 100%); }
@@ -138,14 +138,18 @@ section { position: relative; }
 .svc-panel:nth-child(2) .svc-panel-scrim {
   background: linear-gradient(to top, rgba(18,14,12,.88) 0%, rgba(18,14,12,.34) 42%, rgba(18,14,12,.06) 74%, rgba(18,14,12,.14) 100%); }
 .svc-panel:hover .svc-panel-scrim { background: linear-gradient(to top, rgba(18,14,12,.9) 0%, rgba(18,14,12,.34) 45%, rgba(18,14,12,.05) 82%, rgba(18,14,12,.2) 100%); }
-.svc-panel-body { position: absolute; z-index: 2; inset: auto 0 0 0; padding: clamp(32px, 3vw, 50px); }
+/* shared text grid: text block bottom-anchored at one offset on every panel, with
+   2-line title space reserved so titles, descriptions and links line up across all three */
+.svc-panel-body { position: absolute; z-index: 2; left: 0; right: 0; top: auto; bottom: clamp(2rem, 5vw, 5rem);
+  padding-left: clamp(26px, 2.4vw, 40px); padding-right: clamp(26px, 2.4vw, 40px); }
 /* keep text clear of the diagonal cut on the cut side(s) */
-.svc-panel:nth-child(1) .svc-panel-body, .svc-panel:nth-child(2) .svc-panel-body { padding-right: calc(var(--cut) + var(--gutter) + clamp(18px, 2vw, 32px)); }
-.svc-panel:nth-child(3) .svc-panel-body { padding-left: calc(var(--gutter) + clamp(24px, 2.5vw, 40px)); }
-.svc-panel-body h3 { font-family: var(--ff-display); font-weight: 700; letter-spacing: -0.01em; font-size: clamp(1.8rem, 2.4vw, 2.5rem); line-height: 1.05; color: var(--offwhite); max-width: 15ch; }
-.svc-panel-body p { color: var(--stone); font-size: 0.98rem; line-height: 1.5; margin-top: 12px; max-width: 30ch; opacity: .92; transform: translateY(4px); transition: opacity .45s ease, transform .45s ease; }
+.svc-panel:nth-child(1) .svc-panel-body, .svc-panel:nth-child(2) .svc-panel-body { padding-right: calc(var(--cut) + var(--gutter) + clamp(14px, 1.6vw, 26px)); }
+.svc-panel:nth-child(3) .svc-panel-body { padding-left: calc(var(--gutter) + clamp(22px, 2.2vw, 38px)); }
+.svc-panel-body h3 { display: flex; align-items: flex-end; min-height: 2.12em; margin: 0 0 1rem; max-width: clamp(16rem, 24vw, 22rem);
+  font-family: var(--ff-display); font-weight: 700; letter-spacing: -0.01em; font-size: clamp(1.7rem, 2.2vw, 2.4rem); line-height: 1.06; color: var(--offwhite); }
+.svc-panel-body p { margin: 0 0 1.5rem; max-width: clamp(16rem, 24vw, 22rem); color: var(--stone); font-size: 0.96rem; line-height: 1.5; opacity: .92; transform: translateY(4px); transition: opacity .45s ease, transform .45s ease; }
 .svc-panel:hover .svc-panel-body p { opacity: 1; transform: none; }
-.svc-panel-link { display: inline-flex; align-items: center; gap: 0.6em; margin-top: 20px; font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ember); }
+.svc-panel-link { display: inline-flex; align-items: center; gap: 0.6em; margin-top: 0; font-family: var(--ff-display); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ember); }
 .svc-panel-link .arrow { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
 .svc-panel:hover .svc-panel-link .arrow { transform: translateX(5px); }
 
@@ -263,7 +267,9 @@ section { position: relative; }
   .nav-burger { display: flex; }
   .svc-panels { flex-direction: column; gap: 14px; }           /* stack panels as large image-led panels */
   .svc-panel { flex-basis: auto; width: 100%; margin-left: 0; clip-path: none; height: clamp(360px, 56vh, 540px); }
-  .svc-panel:nth-child(1) .svc-panel-body, .svc-panel:nth-child(2) .svc-panel-body, .svc-panel:nth-child(3) .svc-panel-body { padding: clamp(28px, 6vw, 40px); }  /* no diagonal on mobile */
+  /* no diagonal on mobile: uniform padding, natural title height, simple spacing */
+  .svc-panel:nth-child(1) .svc-panel-body, .svc-panel:nth-child(2) .svc-panel-body, .svc-panel:nth-child(3) .svc-panel-body { padding-left: clamp(26px, 6vw, 40px); padding-right: clamp(26px, 6vw, 40px); }
+  .svc-panel-body h3 { display: block; min-height: 0; }
   .gallery .g-item { flex-basis: calc((100% - 16px) / 2); }   /* 2 per row on tablet */
   .sp-intro { grid-template-columns: 1fr; gap: 36px; }        /* stack intro + includes */
   .sp-grid { grid-template-columns: repeat(2, 1fr); }
