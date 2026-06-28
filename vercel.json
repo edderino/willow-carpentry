@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/services/decks", "destination": "/services/decks-pergolas", "permanent": true },
+    { "source": "/services/pergolas", "destination": "/services/decks-pergolas", "permanent": true },
+    { "source": "/services/renovations", "destination": "/services/renovations-carpentry", "permanent": true }
+  ]
 }
