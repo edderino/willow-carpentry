@@ -7,39 +7,32 @@
 // ─────────────────────────────────────────────────────────────────────────
 
 export const IMAGES = {
-  heroDeck:   { src: "images/hero-finished-deck.jpg",       alt: "Finished jarrah deck wrapping a Canberra home at golden hour", cap: "Evening light" },
-  p1Before:   { src: "images/project-1-before-frame.png",   alt: "Steel and timber deck subframe before decking boards",          cap: "Wraparound · The frame" },
-  p1After:    { src: "images/project-1-after-finished.png", alt: "Finished glossy wraparound jarrah deck in daylight",            cap: "Wraparound deck · Finished" },
-  frontStep:  { src: "images/detail-front-step.png",        alt: "Small glossy timber entry step and landing",                    cap: "Entry step · Detail" },
-  p2Before:   { src: "images/project-2-before-frame.png",   alt: "Raised deck framing and stair stringers under construction",    cap: "Raised deck · Framing" },
-  p2After:    { src: "images/project-2-after-finished.png", alt: "Finished raised deck with wide cascading steps",                cap: "Raised entertainer · Steps" },
-  planter:    { src: "images/detail-planter-box.png",       alt: "Custom timber planter box with clean, even boards",             cap: "Custom planter box" },
-  poolDeck:   { src: "images/willow/IMG_0205.JPG",          alt: "Glossy timber deck wrapping a backyard pool",                   cap: "Poolside deck" },
-  courtyard:  { src: "images/willow/IMG_0206.JPG",          alt: "Compact courtyard deck with lounge chairs",                     cap: "Courtyard deck" },
-  cladDeck:   { src: "images/willow/IMG_0204.JPG",          alt: "Glossy timber deck against matching timber cladding",           cap: "Deck & cladding" },
-  raisedDeck: { src: "images/willow/IMG_0203.JPG",          alt: "Raised timber deck and steps beside a two-storey home",         cap: "Raised deck & steps" },
-  deck20:     { src: "images/willow/deck-20.jpg",           alt: "Compact timber deck off a townhouse sliding door",              cap: "Townhouse deck" },
-  deck21:     { src: "images/willow/deck-21.jpg",           alt: "Timber balcony deck overlooking the street",                    cap: "Balcony deck" },
-  deck22:     { src: "images/willow/deck-22.jpg",           alt: "Freshly oiled timber deck overlooking the backyard",            cap: "Elevated deck" },
+  heroDeck:   { src: "images/hero-finished-deck.jpg",       alt: "Finished timber deck wrapping a Canberra home at golden hour", cap: "" },
+  p1Before:   { src: "images/project-1-before-frame.png",   alt: "Timber deck subframe before decking boards",                 cap: "" },
+  p1After:    { src: "images/project-1-after-finished.png", alt: "Finished wraparound timber deck in daylight",                 cap: "" },
+  frontStep:  { src: "images/detail-front-step.png",        alt: "Small timber entry step and landing",                         cap: "" },
+  p2Before:   { src: "images/project-2-before-frame.png",   alt: "Raised deck framing and stair stringers under construction",   cap: "" },
+  p2After:    { src: "images/project-2-after-finished.png", alt: "Finished raised deck with wide cascading steps",               cap: "" },
+  planter:    { src: "images/detail-planter-box.png",       alt: "Exterior timber detail with clean board lines",                cap: "" },
+  poolDeck:   { src: "images/willow/IMG_0205.JPG",          alt: "Timber deck wrapping a backyard pool",                        cap: "" },
+  courtyard:  { src: "images/willow/IMG_0206.JPG",          alt: "Compact courtyard deck with lounge chairs",                    cap: "" },
+  cladDeck:   { src: "images/willow/IMG_0204.JPG",          alt: "Timber exterior detail beside an outdoor area",                cap: "" },
+  raisedDeck: { src: "images/willow/IMG_0203.JPG",          alt: "Raised timber deck and steps beside a two-storey home",        cap: "" },
+  deck20:     { src: "images/willow/deck-20.jpg",           alt: "Compact timber deck off a townhouse sliding door",             cap: "" },
+  deck21:     { src: "images/willow/deck-21.jpg",           alt: "Timber balcony deck overlooking the street",                   cap: "" },
+  deck22:     { src: "images/willow/deck-22.jpg",           alt: "Freshly oiled timber deck overlooking the backyard",           cap: "" },
 };
 
-// Gallery = curated project showcase (data-driven order). Excludes the hero and
-// craft-card images so the gallery doesn't obviously repeat them. frontStep
-// (detail-front-step.png) is omitted entirely — it is byte-identical to
-// project-2-after-finished.png, so showing it would duplicate the staircase.
-// Recent Work shows images not used elsewhere on the site: the three originals
-// (poolDeck, courtyard, frontStep) plus three new deck photos — 6 total (3x2 grid).
-export const GALLERY = ["poolDeck", "courtyard", "frontStep", "deck20", "deck21", "deck22"];
+// Gallery = curated project showcase. Captions are intentionally blank/hidden;
+// the photos stand on their own and still keep useful alt text for accessibility.
+export const GALLERY = ["poolDeck", "courtyard", "deck20", "deck21", "deck22"];
 
-// Reference map of where each image is featured (single source for placement).
 export const SECTIONS = {
   hero: "heroDeck",
   transformation: [
-    { before: "p1Before", after: "p1After" },             // before/after pair
-    { before: "p2Before", after: "p2After" },             // before/after pair
+    { before: "p1Before", after: "p1After" },
+    { before: "p2Before", after: "p2After" },
   ],
-  gallery: ["poolDeck", "courtyard", "frontStep", "deck20", "deck21", "deck22"], // images not shown elsewhere
-  craft: ["heroDeck", "cladDeck", "planter"],             // detail cards
+  gallery: ["poolDeck", "courtyard", "deck20", "deck21", "deck22"],
   final: "raisedDeck",
-  // p1Before, p2Before, p2After (framing / raised-entertainer) removed from the site per request
 };
