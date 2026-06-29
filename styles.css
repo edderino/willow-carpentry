@@ -100,28 +100,34 @@ section { position: relative; }
 .sec-head .sec-title { max-width: 20ch; margin-top: 14px; }
 
 /* ---------- Story (before / after side by side) ---------- */
-.story + .story { border-top: 1px solid var(--line); }
+.story + .story { border-top: 1px solid var(--line); margin-top: clamp(2rem, 3.5vw, 3.5rem); padding-top: clamp(2rem, 3.5vw, 3.5rem); }
 .on-light .story + .story { border-top: 1px solid var(--line-dark); }
-.story-head { max-width: 760px; margin-bottom: 40px; }
-.story-head h2 { margin: 12px 0 16px; }
-.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.ba-card { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: 4px; box-shadow: 0 26px 60px -34px rgba(0,0,0,.7); }
+.story-head { max-width: 760px; margin-bottom: clamp(1.5rem, 2.5vw, 2rem); }
+.story-head h2 { margin: 10px 0 14px; }
+.ba-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ba-card { position: relative; height: clamp(320px, 42vw, 520px); overflow: hidden; border-radius: 4px; box-shadow: 0 26px 60px -34px rgba(0,0,0,.7); }
 .ba-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 1s cubic-bezier(.2,.7,.2,1); }
 .ba-card:hover img { transform: scale(1.04); }
-.ba-badge { position: absolute; z-index: 2; top: 16px; left: 16px; font-family: var(--ff-display); font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; padding: 6px 12px; background: rgba(18,14,12,.72); backdrop-filter: blur(4px); border-radius: 3px; color: var(--offwhite); }
+.ba-badge { position: absolute; z-index: 2; top: 12px; left: 12px; font-family: var(--ff-display); font-size: 0.58rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; padding: 5px 9px; background: rgba(18,14,12,.72); backdrop-filter: blur(4px); border-radius: 3px; color: var(--offwhite); }
 .ba-badge.finished { color: var(--ember); }
 .story-meta { display: flex; gap: 28px; margin-top: 26px; flex-wrap: wrap; }
 .story-meta .k { font-family: var(--ff-display); font-weight: 700; font-size: 1.1rem; }
 .story-meta .v { font-size: 0.8rem; color: var(--stone-dim); }
 .on-light .story-meta .v { color: var(--stone-dim); }
+/* Frame-to-Finish: compact module rhythm (tighter padding + controlled heading scale) */
+#transformation { padding-block: clamp(4rem, 7vw, 7rem); }
+#transformation .sec-head { margin-bottom: clamp(1.75rem, 3vw, 2.5rem); }
+#transformation .sec-head .sec-title { font-size: clamp(2.4rem, 4.4vw, 3.5rem); }
+#transformation .story-head h2 { font-size: clamp(2rem, 3.4vw, 2.8rem); }
 
 /* ---------- Services: full-height image panel navigation (adapted 21st.dev "Expanding Cards") ---------- */
 .svc-section .sec-head { margin-bottom: 0; }
 /* three full-bleed panels with interlocking ~8deg diagonal cuts (clip-path),
    separated by a dark angled gutter that follows the same angle. The gutter is
    the section background showing through where adjacent panels are clipped. */
-.svc-panels { --cut: clamp(54px, 6vw, 90px); --gutter: 16px; display: flex; margin-top: clamp(40px, 5vw, 64px); background: var(--charcoal); }
-.svc-panel { position: relative; display: block; flex: 0 0 calc((100% + 2 * var(--cut)) / 3); height: clamp(460px, 80vh, 780px); overflow: hidden; background: var(--charcoal-2); box-shadow: inset 0 0 52px rgba(0, 0, 0, 0.42); }
+.svc-panels { --cut: clamp(54px, 6vw, 90px); --gutter: 16px; display: flex;
+  width: min(100% - 48px, 1680px); margin: clamp(40px, 5vw, 64px) auto 0; padding: var(--gutter); background: var(--charcoal); }
+.svc-panel { position: relative; display: block; flex: 0 0 calc((100% + 2 * var(--cut)) / 3); height: clamp(520px, 68vh, 760px); overflow: hidden; background: var(--charcoal-2); box-shadow: inset 0 0 52px rgba(0, 0, 0, 0.42); }
 .svc-panel:nth-child(2), .svc-panel:nth-child(3) { margin-left: calc(-1 * var(--cut)); }
 .svc-panel:nth-child(1) { clip-path: polygon(0 0, calc(100% - var(--gutter)) 0, calc(100% - var(--cut) - var(--gutter)) 100%, 0 100%); }
 .svc-panel:nth-child(2) { clip-path: polygon(var(--cut) 0, calc(100% - var(--gutter)) 0, calc(100% - var(--cut) - var(--gutter)) 100%, 0 100%); }
