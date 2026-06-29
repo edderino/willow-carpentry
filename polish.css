@@ -173,6 +173,21 @@
   align-items: start;
 }
 
+.about-photo {
+  margin: clamp(26px, 3vw, 40px) 0 0;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+
+.about-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 26%;
+}
+
 .about-copy p {
   color: var(--text-mute);
   font-size: clamp(1.02rem, 1.3vw, 1.16rem);
