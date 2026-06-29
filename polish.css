@@ -1,6 +1,6 @@
-/* Willow polish overrides — text alignment, safer panel copy, compact service grids */
+/* Willow polish overrides — stacked services, text alignment, quote form, FAQ */
 
-/* Keep the three service panel text blocks mathematically aligned. */
+/* Legacy service panel alignment kept in case the old panel markup is reused later. */
 .svc-panel-body {
   bottom: clamp(1.75rem, 4vw, 4rem);
   display: grid;
@@ -54,6 +54,207 @@
 
 .sp-grid.is-compact .sp-tile {
   min-height: clamp(220px, 24vw, 340px);
+}
+
+/* Stacked homepage services */
+.svc-stack {
+  display: grid;
+  gap: clamp(26px, 4vw, 52px);
+}
+
+.svc-row {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.92fr) minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 74px);
+  align-items: center;
+  padding: clamp(18px, 2.2vw, 30px);
+  border: 1px solid var(--line);
+  background: rgba(42, 36, 32, 0.34);
+  border-radius: 6px;
+}
+
+.svc-row.alt .svc-row-media {
+  order: 2;
+}
+
+.svc-row-media {
+  position: relative;
+  display: block;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--charcoal-2);
+}
+
+.svc-row-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92) saturate(0.98);
+  transition: transform 0.9s cubic-bezier(.2,.7,.2,1), filter .4s;
+}
+
+.svc-row-media:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.02) saturate(1.02);
+}
+
+.svc-row-copy h3 {
+  margin-top: 12px;
+  font-size: clamp(2rem, 4vw, 3.1rem);
+  line-height: 1.02;
+}
+
+.svc-row-copy p {
+  margin-top: 18px;
+  max-width: 58ch;
+  color: var(--text-mute);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+}
+
+.svc-row-copy ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 22px;
+  margin-top: 24px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.svc-row-copy li {
+  color: var(--stone);
+  font-size: 0.92rem;
+}
+
+.svc-row-copy li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  margin-right: 10px;
+  transform: translateY(-1px);
+  border-radius: 50%;
+  background: var(--ember);
+}
+
+.svc-text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6em;
+  margin-top: 26px;
+  font-family: var(--ff-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+
+.svc-text-link .arrow {
+  transition: transform .35s cubic-bezier(.2,.7,.2,1);
+}
+
+.svc-text-link:hover .arrow {
+  transform: translateX(5px);
+}
+
+/* About section */
+.about-section {
+  background: #15110E;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: clamp(36px, 7vw, 100px);
+  align-items: start;
+}
+
+.about-copy p {
+  color: var(--text-mute);
+  font-size: clamp(1.02rem, 1.3vw, 1.16rem);
+  max-width: 64ch;
+}
+
+.about-copy p + p {
+  margin-top: 18px;
+}
+
+.about-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-top: 34px;
+  border-top: 1px solid var(--line);
+}
+
+.about-points div {
+  padding: 18px 18px 0 0;
+}
+
+.about-points div + div {
+  border-left: 1px solid var(--line);
+  padding-left: 18px;
+}
+
+.about-points strong {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: 1.12rem;
+  color: var(--offwhite);
+}
+
+.about-points span {
+  display: block;
+  margin-top: 5px;
+  color: var(--stone-mute);
+  font-size: 0.88rem;
+}
+
+/* FAQ section */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.faq-grid details {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  background: rgba(42, 36, 32, 0.42);
+  padding: 18px 20px;
+}
+
+.faq-grid summary {
+  cursor: pointer;
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: 1.02rem;
+  color: var(--offwhite);
+  list-style: none;
+}
+
+.faq-grid summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-grid summary::after {
+  content: "+";
+  float: right;
+  color: var(--ember);
+}
+
+.faq-grid details[open] summary::after {
+  content: "−";
+}
+
+.faq-grid p {
+  margin-top: 14px;
+  color: var(--text-mute);
+  font-size: 0.95rem;
 }
 
 /* Quote form */
@@ -163,7 +364,34 @@
     padding-right: clamp(26px, 6vw, 40px);
   }
 
+  .svc-row,
+  .svc-row.alt {
+    grid-template-columns: 1fr;
+  }
+
+  .svc-row.alt .svc-row-media {
+    order: 0;
+  }
+
+  .about-grid,
+  .faq-grid,
   .quote-final .final-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .about-points {
+    grid-template-columns: 1fr;
+  }
+
+  .about-points div + div {
+    border-left: none;
+    border-top: 1px solid var(--line);
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .svc-row-copy ul {
     grid-template-columns: 1fr;
   }
 }
