@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/polish.css" />
+  <link rel="stylesheet" href="/service-pages.css" />
   <script>
     document.documentElement.classList.add("js");
     window.addEventListener("load", function () {
@@ -29,21 +30,22 @@
       <span class="bt">WILLOW<small>CARPENTRY &amp; CONSTRUCTION</small></span>
     </a>
     <nav class="nav-links">
-      <a href="/#transformation">Transformation</a>
       <a href="/#services">Services</a>
+      <a href="/#about">About</a>
+      <a href="/#faq">FAQ</a>
       <a href="/#gallery">Projects</a>
     </nav>
     <a href="/#quote" class="btn btn-primary nav-cta">Request a Quote <span class="arrow">→</span></a>
     <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </header>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/#transformation">Transformation</a>
     <a href="/#services">Services</a>
+    <a href="/#about">About</a>
+    <a href="/#faq">FAQ</a>
     <a href="/#gallery">Projects</a>
     <a href="/#quote" class="btn btn-primary">Request a Quote <span class="arrow">→</span></a>
   </div>
 
-  <!-- 1. BREADCRUMB + TITLE + INTRO + 2. EXPLANATION + HERO IMAGE -->
   <section class="section-pad sp-header">
     <div class="wrap">
       <a class="back-link" href="/#services">← All Services</a>
@@ -64,7 +66,6 @@
     </div>
   </section>
 
-  <!-- 3. WHAT THIS CAN INCLUDE -->
   <section class="section-pad" style="padding-top: 0;">
     <div class="wrap">
       <h2 class="sp-incl-h">What this can include</h2>
@@ -73,38 +74,60 @@
         <li><span class="incl-n">02</span><span>Deck replacements</span></li>
         <li><span class="incl-n">03</span><span>Pergolas over decks</span></li>
         <li><span class="incl-n">04</span><span>Covered outdoor areas</span></li>
-        <li><span class="incl-n">05</span><span>Outdoor entertaining spaces</span></li>
-        <li><span class="incl-n">06</span><span>Steps and access points</span></li>
-        <li><span class="incl-n">07</span><span>Screening and finishing details</span></li>
+        <li><span class="incl-n">05</span><span>Steps and access points</span></li>
+        <li><span class="incl-n">06</span><span>Screening and finishing details</span></li>
       </ol>
     </div>
   </section>
 
-  <!-- 4. PROJECT GRID -->
-  <section class="section-pad" id="projects" style="padding-top: clamp(16px, 2vw, 32px);">
+  <section class="section-pad sp-story-section" id="projects">
     <div class="wrap">
-      <h2 class="display sec-title" style="margin-bottom: 30px;">Deck &amp; Pergola Examples</h2>
-      <div class="sp-grid" data-reveal>
-        <div class="sp-tile"><img src="/images/willow/deck-20.jpg" alt="Small timber deck off a townhouse sliding door" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Townhouse deck</span></div>
-        <div class="sp-tile"><img src="/images/willow/deck-22.jpg" alt="Freshly oiled timber deck overlooking a backyard" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Elevated deck</span></div>
-        <div class="sp-tile"><img src="/images/willow/IMG_0205.JPG" alt="Timber deck wrapping a backyard pool" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Poolside deck</span></div>
-        <div class="sp-tile"><img src="/images/willow/service-pergola.jpg" alt="Timber pergola and covered outdoor area" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Pergola area</span></div>
-        <div class="sp-tile"><img src="/images/willow/IMG_0203.JPG" alt="Raised timber deck and steps beside a home" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Raised deck and steps</span></div>
-        <div class="sp-tile"><img src="/images/project-2-after-finished.png" alt="Finished timber deck with wide cascading steps" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Cascading steps</span></div>
-        <div class="sp-tile"><img src="/images/willow/decked1.jpg" alt="Finished composite deck running along a Canberra home" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Finished deck</span></div>
-        <div class="sp-tile"><img src="/images/willow/deckframing1.jpeg" alt="Timber deck framing and subframe under construction" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Deck framing</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolaframe1.jpg" alt="Pergola frame over a finished deck" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Pergola frame</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolaframe2.jpeg" alt="Timber pergola roof framing" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Pergola roof framing</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolaframing3.jpg" alt="Timber pergola structure under construction" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Pergola structure</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolaroofframing3.jpg" alt="Timber pergola roof framing against the house" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Roof framing</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolasheeted1.jpeg" alt="Pergola with roof sheeting installed" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Roofed pergola</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolasheeted2.jpg" alt="Sheeted pergola roof" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Pergola roof</span></div>
-        <div class="sp-tile"><img src="/images/willow/pergolasheeted3.jpeg" alt="Covered pergola with a new roof" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Covered pergola</span></div>
+      <div class="sp-story-head" data-reveal>
+        <span class="eyebrow">Project Examples</span>
+        <h2 class="display sec-title">How the work comes together</h2>
+        <p class="lede">A smaller set of project moments with more context, instead of a wall of loose images.</p>
+      </div>
+
+      <div class="sp-story-list">
+        <article class="sp-story-card" data-reveal>
+          <div class="sp-story-media grid-2">
+            <img src="/images/willow/deckframing1.jpeg" alt="Timber deck subframe under construction" loading="lazy" />
+            <img src="/images/willow/decked1.jpg" alt="Finished deck boards laid along the home" loading="lazy" />
+            <img src="/images/willow/deck-20.jpg" alt="Finished deck connected to the home" loading="lazy" />
+          </div>
+          <div class="sp-story-copy">
+            <span class="eyebrow">Deck build</span>
+            <h3>From subframe to finished deck</h3>
+            <p>The deck starts with the set-out and framing underneath. Once the structure is right, the finish becomes cleaner, straighter and easier to live with.</p>
+            <div class="sp-story-points">
+              <div><strong>Set-out</strong><span>Built to suit the home and access.</span></div>
+              <div><strong>Framing</strong><span>Structure before the visible finish.</span></div>
+              <div><strong>Finish</strong><span>Decking boards, edges and details.</span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="sp-story-card alt" data-reveal>
+          <div class="sp-story-media grid-2">
+            <img src="/images/willow/pergolaframe1.jpg" alt="Pergola frame built over a deck" loading="lazy" />
+            <img src="/images/willow/pergolaroofframing3.jpg" alt="Pergola roof framing fixed against the home" loading="lazy" />
+            <img src="/images/willow/pergolasheeted1.jpeg" alt="Pergola with roof sheeting installed" loading="lazy" />
+          </div>
+          <div class="sp-story-copy">
+            <span class="eyebrow">Pergola work</span>
+            <h3>Frame, roof, covered outdoor area</h3>
+            <p>A pergola needs to look like it belongs with the house, not like it was added as an afterthought. The framing, roof line and finished cover all matter.</p>
+            <div class="sp-story-points">
+              <div><strong>Frame</strong><span>Posts, beams and roof structure.</span></div>
+              <div><strong>Cover</strong><span>Roofed outdoor space.</span></div>
+              <div><strong>Use</strong><span>Shade and weather protection.</span></div>
+            </div>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 5. CTA -->
   <section class="final">
     <div class="final-bg"><img src="/images/willow/service-decking.jpg" alt="Finished timber deck on a Canberra home" loading="lazy" /></div>
     <div class="final-scrim"></div>
@@ -124,7 +147,7 @@
             <img src="/images/willow-logo.png" alt="Willow Carpentry & Construction logo" />
             <span class="bt">WILLOW<small>CARPENTRY &amp; CONSTRUCTION</small></span>
           </a>
-          <p class="footer-blurb">Residential carpentry, outdoor spaces and detailed timber work across Canberra.</p>
+          <p class="footer-blurb">Residential carpentry, outdoor spaces and timber detail work across Canberra.</p>
         </div>
         <div>
           <h4>Contact</h4>
@@ -146,6 +169,8 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#gallery">Projects</a></li>
             <li><a href="/#quote">Request a Quote</a></li>
           </ul>
