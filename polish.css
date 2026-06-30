@@ -15,6 +15,14 @@
 }
 
 /* Stacked homepage services */
+.svc-section {
+  padding-top: clamp(76px, 7vw, 104px);
+}
+
+.svc-section .sec-head {
+  margin-bottom: clamp(32px, 4vw, 50px);
+}
+
 .svc-stack {
   display: grid;
   gap: clamp(26px, 4vw, 52px);
