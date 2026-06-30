@@ -25,7 +25,7 @@ export const IMAGES = {
 
 // Gallery = curated project showcase. Captions are intentionally blank/hidden;
 // the photos stand on their own and still keep useful alt text for accessibility.
-export const GALLERY = ["poolDeck", "courtyard", "deck20", "deck21", "deck22"];
+export const GALLERY = ["poolDeck", "courtyard", "raisedDeck", "deck20", "deck21", "deck22"];
 
 export const SECTIONS = {
   hero: "heroDeck",
@@ -33,6 +33,6 @@ export const SECTIONS = {
     { before: "p1Before", after: "p1After" },
     { before: "p2Before", after: "p2After" },
   ],
-  gallery: ["poolDeck", "courtyard", "deck20", "deck21", "deck22"],
+  gallery: ["poolDeck", "courtyard", "raisedDeck", "deck20", "deck21", "deck22"],
   final: "raisedDeck",
 };
