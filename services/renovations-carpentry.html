@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/styles.css" />
   <link rel="stylesheet" href="/polish.css" />
+  <link rel="stylesheet" href="/service-pages.css" />
   <script>
     document.documentElement.classList.add("js");
     window.addEventListener("load", function () {
@@ -29,16 +30,18 @@
       <span class="bt">WILLOW<small>CARPENTRY &amp; CONSTRUCTION</small></span>
     </a>
     <nav class="nav-links">
-      <a href="/#transformation">Transformation</a>
       <a href="/#services">Services</a>
+      <a href="/#about">About</a>
+      <a href="/#faq">FAQ</a>
       <a href="/#gallery">Projects</a>
     </nav>
     <a href="/#quote" class="btn btn-primary nav-cta">Request a Quote <span class="arrow">→</span></a>
     <button class="nav-burger" id="burger" aria-label="Open menu"><span></span><span></span><span></span></button>
   </header>
   <div class="mobile-menu" id="mobileMenu">
-    <a href="/#transformation">Transformation</a>
     <a href="/#services">Services</a>
+    <a href="/#about">About</a>
+    <a href="/#faq">FAQ</a>
     <a href="/#gallery">Projects</a>
     <a href="/#quote" class="btn btn-primary">Request a Quote <span class="arrow">→</span></a>
   </div>
@@ -70,22 +73,38 @@
         <li><span class="incl-n">01</span><span>Residential carpentry</span></li>
         <li><span class="incl-n">02</span><span>Bathroom renovation work</span></li>
         <li><span class="incl-n">03</span><span>Internal upgrades</span></li>
-        <li><span class="incl-n">04</span><span>External upgrades</span></li>
-        <li><span class="incl-n">05</span><span>Custom timber work</span></li>
-        <li><span class="incl-n">06</span><span>Repairs and replacements</span></li>
-        <li><span class="incl-n">07</span><span>Finishing details</span></li>
+        <li><span class="incl-n">04</span><span>Custom timber work</span></li>
+        <li><span class="incl-n">05</span><span>Repairs and replacements</span></li>
+        <li><span class="incl-n">06</span><span>Finishing details</span></li>
       </ol>
     </div>
   </section>
 
-  <!-- BATHROOM BEFORE / AFTER -->
-  <section class="section-pad" id="projects" style="padding-top: clamp(16px, 2vw, 32px);">
+  <section class="section-pad sp-story-section" id="projects">
     <div class="wrap">
-      <h2 class="display sec-title" style="margin-bottom: 30px;">Bathroom renovation</h2>
-      <div class="sp-grid" data-reveal style="grid-template-columns: repeat(2, 1fr);">
-        <div class="sp-tile"><img src="/images/willow/beforebathroom.jpeg" alt="Dated tiled bathroom before renovation" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">Before</span></div>
-        <div class="sp-tile"><img src="/images/willow/bathroom-reno.jpg" alt="Renovated bathroom with timber vanity benchtop and mirror" style="object-position: 55% 30%;" loading="lazy" /><div class="sp-scrim"></div><span class="sp-label">After</span></div>
+      <div class="sp-story-head" data-reveal>
+        <span class="eyebrow">Project Example</span>
+        <h2 class="display sec-title">Bathroom renovation</h2>
+        <p class="lede">A simple before-and-after moment with the context beside it, instead of a thin image grid.</p>
       </div>
+
+      <article class="sp-story-card" data-reveal>
+        <div class="sp-story-media grid-2">
+          <img src="/images/willow/beforebathroom.jpeg" alt="Dated tiled bathroom before renovation" loading="lazy" />
+          <img src="/images/willow/bathroom-reno.jpg" alt="Renovated bathroom with timber vanity benchtop and mirror" style="object-position: 55% 30%;" loading="lazy" />
+          <img src="/images/willow/bathroom-reno.jpg" alt="Finished bathroom vanity and mirror detail" style="object-position: 55% 30%;" loading="lazy" />
+        </div>
+        <div class="sp-story-copy">
+          <span class="eyebrow">Before / After</span>
+          <h3>Cleaner finish, better use of space</h3>
+          <p>The value in this kind of work is not just the final photo. It is the shift from a dated, tired space into a cleaner bathroom that feels simpler, lighter and more usable.</p>
+          <div class="sp-story-points">
+            <div><strong>Before</strong><span>Old tiled bathroom ready for update.</span></div>
+            <div><strong>Finish</strong><span>Cleaner vanity, mirror and wall detail.</span></div>
+            <div><strong>Use</strong><span>More practical everyday space.</span></div>
+          </div>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -130,6 +149,8 @@
           <h4>Explore</h4>
           <ul>
             <li><a href="/#services">Services</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#faq">FAQ</a></li>
             <li><a href="/#gallery">Projects</a></li>
             <li><a href="/#quote">Request a Quote</a></li>
           </ul>
