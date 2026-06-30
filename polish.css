@@ -60,6 +60,10 @@
   transition: transform 0.9s cubic-bezier(.2,.7,.2,1), filter .4s;
 }
 
+.svc-row:nth-child(3) .svc-row-media img {
+  object-position: center 78%;
+}
+
 .svc-row-media:hover img {
   transform: scale(1.035);
   filter: brightness(1.02) saturate(1.02);
