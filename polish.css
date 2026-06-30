@@ -117,97 +117,117 @@
   transform: translateX(5px);
 }
 
-/* About section — fixed after audit: no oversized heading, no huge empty card. */
+/* About section — premium editorial spread: full-width header, feature
+   portrait, calm copy, thin-ruled values (no boxed cards). */
 .about-section {
   background: #15110E;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
-.about-grid {
+.about-head {
+  max-width: 60ch;
+  margin-bottom: clamp(34px, 4.5vw, 58px);
+  padding-bottom: clamp(26px, 3.5vw, 42px);
+  border-bottom: 1px solid var(--line);
+}
+
+.about-title {
+  margin-top: 16px;
+  font-size: clamp(2.2rem, 4.2vw, 3.5rem);
+  line-height: 1.04;
+  max-width: 20ch;
+}
+
+.about-body {
   display: grid;
-  grid-template-columns: minmax(320px, 0.78fr) minmax(0, 1fr);
-  gap: clamp(34px, 5vw, 72px);
-  align-items: center;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: clamp(40px, 6vw, 92px);
+  align-items: start;
 }
 
-.about-section .sec-title {
-  margin-top: 14px;
-  max-width: 18ch;
-  font-size: clamp(2.35rem, 3.8vw, 4rem);
-  line-height: 0.98;
+.about-portrait {
+  max-width: 400px;
 }
 
-.about-photo {
-  margin: clamp(20px, 2.8vw, 32px) 0 0;
-  border-radius: 6px;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  box-shadow: 0 24px 60px -44px rgba(0, 0, 0, 0.8);
-}
-
-.about-photo img {
+.about-portrait img {
   display: block;
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center 36%;
+  object-position: center 22%;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  box-shadow: 0 42px 80px -52px rgba(0, 0, 0, 0.92);
+}
+
+.about-portrait figcaption {
+  position: relative;
+  margin-top: 16px;
+  padding-left: 16px;
+  font-family: var(--ff-display);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone-dim);
+}
+
+.about-portrait figcaption::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.05em;
+  width: 5px;
+  height: 0.9em;
+  background: var(--jarrah);
 }
 
 .about-copy {
-  align-self: center;
-  padding: clamp(22px, 2.8vw, 34px);
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: rgba(42, 36, 32, 0.34);
+  padding-top: clamp(2px, 0.8vw, 10px);
 }
 
 .about-copy p {
   color: var(--text-mute);
-  font-size: clamp(0.98rem, 1.1vw, 1.08rem);
-  line-height: 1.62;
-  max-width: 64ch;
+  font-size: clamp(1.04rem, 1.25vw, 1.18rem);
+  line-height: 1.66;
+  max-width: 52ch;
 }
 
 .about-copy p + p {
-  margin-top: 14px;
+  margin-top: 18px;
 }
 
-.about-points {
+.about-values {
+  list-style: none;
+  margin-top: clamp(32px, 4vw, 52px);
+}
+
+.about-values li {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
-  margin-top: 24px;
-  padding-top: 22px;
+  grid-template-columns: minmax(0, 8rem) 1fr;
+  gap: clamp(20px, 3vw, 44px);
+  align-items: baseline;
+  padding: clamp(15px, 1.5vw, 20px) 0;
   border-top: 1px solid var(--line);
 }
 
-.about-points div {
-  min-width: 0;
-  padding: 14px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
-  background: rgba(21, 17, 14, 0.42);
+.about-values li:last-child {
+  border-bottom: 1px solid var(--line);
 }
 
-.about-points div + div {
-  border-left: 1px solid var(--line);
-  padding-left: 14px;
-}
-
-.about-points strong {
-  display: block;
+.about-values .k {
   font-family: var(--ff-display);
+  font-weight: 700;
   font-size: 1rem;
+  letter-spacing: 0.01em;
   color: var(--offwhite);
 }
 
-.about-points span {
-  display: block;
-  margin-top: 5px;
-  color: var(--stone-mute);
-  font-size: 0.8rem;
-  line-height: 1.42;
+.about-values .v {
+  color: var(--text-mute);
+  font-size: 0.98rem;
+  line-height: 1.5;
 }
 
 /* FAQ section */
@@ -343,32 +363,24 @@
     order: 0;
   }
 
-  .about-grid,
+  .about-body,
   .faq-grid,
   .quote-final .final-inner {
     grid-template-columns: 1fr;
   }
 
-  .about-section .sec-title {
-    max-width: 16ch;
+  .about-portrait {
+    max-width: 340px;
   }
 
   .quote-form {
     justify-self: stretch;
     width: 100%;
   }
-
-  .about-points {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 640px) {
   .svc-row-copy ul {
     grid-template-columns: 1fr;
-  }
-
-  .about-copy {
-    padding: 22px;
   }
 }
