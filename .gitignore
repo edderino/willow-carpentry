@@ -7,3 +7,8 @@
 /project-1-before-frame.html
 /project-1-before-frame_files/
 .DS_Store
+
+# Local env files and Vercel CLI state
+.env.local
+.env*.local
+.vercel/

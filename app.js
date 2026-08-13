@@ -126,3 +126,108 @@ document.querySelectorAll('a[href^="#"]').forEach((a) => {
     });
   });
 });
+
+/* Quote form — validation, honeypot and submission to /api/enquiry. */
+(function () {
+  var form = document.getElementById("quoteForm");
+  if (!form) return;
+
+  var submit = document.getElementById("quoteSubmit");
+  var status = document.getElementById("quoteStatus");
+  var fields = Array.prototype.slice.call(
+    form.querySelectorAll("input[name], select[name], textarea[name]")
+  ).filter(function (el) { return el.name !== "website"; });
+
+  function messageFor(el) {
+    var v = el.validity;
+    if (v.valid) return "";
+    if (v.valueMissing) {
+      return el.tagName === "SELECT" ? "Please choose an option." : "This one's needed.";
+    }
+    if (v.typeMismatch && el.type === "email") return "Please enter a valid email address.";
+    if (v.tooShort) return "Please enter at least " + el.minLength + " characters.";
+    if (v.patternMismatch) return el.title || "Please check this format.";
+    return "Please check this field.";
+  }
+
+  function showError(el) {
+    var slot = form.querySelector('[data-error-for="' + el.name + '"]');
+    var message = messageFor(el);
+    if (slot) slot.textContent = message;
+    el.setAttribute("aria-invalid", message ? "true" : "false");
+    return !message;
+  }
+
+  function clearError(el) {
+    var slot = form.querySelector('[data-error-for="' + el.name + '"]');
+    if (slot) slot.textContent = "";
+    el.removeAttribute("aria-invalid");
+  }
+
+  function refreshSubmit() {
+    submit.disabled = !form.checkValidity();
+  }
+
+  fields.forEach(function (el) {
+    el.addEventListener("input", function () { clearError(el); refreshSubmit(); });
+    el.addEventListener("change", refreshSubmit);
+    el.addEventListener("blur", function () { if (el.value) showError(el); });
+  });
+
+  refreshSubmit();
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    var firstInvalid = null;
+    fields.forEach(function (el) {
+      if (!showError(el) && !firstInvalid) firstInvalid = el;
+    });
+    if (firstInvalid) {
+      status.textContent = "";
+      firstInvalid.focus();
+      return;
+    }
+
+    var payload = {};
+    Array.prototype.forEach.call(
+      form.querySelectorAll("input[name], select[name], textarea[name]"),
+      function (el) { payload[el.name] = el.value; }
+    );
+
+    submit.disabled = true;
+    status.className = "form-status";
+    status.textContent = "Sending your enquiry…";
+
+    fetch(form.action, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
+    })
+      .then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          return { ok: res.ok, data: data };
+        });
+      })
+      .then(function (result) {
+        if (result.ok) {
+          form.reset();
+          status.className = "form-status is-ok";
+          status.textContent = "Thanks — we've got your enquiry and will be in touch shortly.";
+          return;
+        }
+        var errors = result.data.errors || {};
+        Object.keys(errors).forEach(function (name) {
+          var slot = form.querySelector('[data-error-for="' + name + '"]');
+          if (slot) slot.textContent = errors[name];
+        });
+        status.className = "form-status is-error";
+        status.textContent = result.data.error || "Something went wrong. Please call us on 0434 459 704.";
+      })
+      .catch(function () {
+        status.className = "form-status is-error";
+        status.textContent = "We could not send that. Please call us on 0434 459 704.";
+      })
+      .then(function () { refreshSubmit(); });
+  });
+})();

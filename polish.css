@@ -431,3 +431,30 @@
 @media (max-width: 900px) {
   .nav-social { margin-right: 12px; }
 }
+
+/* ---- Quote form: validation, honeypot, status ---------------------- */
+/* Off-screen rather than display:none so bots still fill it in. */
+.hp-field {
+  position: absolute; left: -9999px; top: auto;
+  width: 1px; height: 1px; overflow: hidden;
+}
+
+.quote-form .opt { color: var(--stone-dim); font-weight: 400; text-transform: none; letter-spacing: 0; }
+
+.field-error {
+  display: block; margin-top: 5px;
+  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.01em;
+  color: #E39A82; text-transform: none; min-height: 0;
+}
+.field-error:empty { display: none; }
+
+.quote-form [aria-invalid="true"] { border-color: #E39A82; }
+
+.quote-form button[disabled] { opacity: .55; cursor: not-allowed; }
+
+.form-status {
+  margin-top: 10px; font-size: 0.8rem; line-height: 1.5; color: var(--text-mute);
+}
+.form-status:empty { display: none; }
+.form-status.is-ok { color: #A8C08D; }
+.form-status.is-error { color: #E39A82; }
