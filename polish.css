@@ -396,3 +396,38 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- Prominent social links ---------------------------------------- */
+.nav-social { display: flex; gap: 8px; margin-left: auto; margin-right: 16px; }
+.nav-social a {
+  display: grid; place-items: center; width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--line); color: var(--text-mute);
+  transition: color .25s, border-color .25s, background .25s, transform .25s;
+}
+.nav-social a:hover { color: var(--offwhite); border-color: var(--ember); background: rgba(201,140,95,.14); transform: translateY(-1px); }
+.nav-social svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+
+.mm-social { display: flex; gap: 12px; margin-top: 28px; }
+.mm-social a {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--ff-body); font-size: 0.95rem; font-weight: 500;
+  padding: 11px 18px; border: 1px solid var(--line); border-radius: 999px; color: var(--text);
+}
+.mm-social svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+
+.follow { margin-top: 26px; }
+.follow h4 { margin-bottom: 12px; }
+.follow-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.follow-links a {
+  display: inline-flex; align-items: center; gap: 9px;
+  font-size: 0.86rem; font-weight: 600; letter-spacing: .02em;
+  padding: 10px 16px; border-radius: 999px;
+  border: 1px solid var(--line); color: var(--text);
+  transition: border-color .25s, background .25s, color .25s, transform .25s;
+}
+.follow-links a:hover { border-color: var(--ember); background: rgba(201,140,95,.14); color: var(--offwhite); transform: translateY(-1px); }
+.follow-links svg { width: 18px; height: 18px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+
+@media (max-width: 900px) {
+  .nav-social { margin-right: 12px; }
+}
